@@ -30,10 +30,18 @@ public class ActivityOne extends Activity {
 
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
+    public int mCreate;
+    public int mRestart;
+    public int mStart;
+    public int mResume;
 
 	// TODO: Create variables for each of the TextViews
 	// named mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
+    public TextView mTvCreate;
+    public TextView mTVRestart;
+    public TextView mTvStart;
+    public TextView mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +51,13 @@ public class ActivityOne extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
+        mTvCreate = (TextView) findViewById(R.id.mTVCreate);
+        mTVRestart = (TextView) findViewById(R.id.mTVRestart);
+        mTvStart = (TextView) findViewById(R.id.mTvStart);
+        mTvResume = (TextView) findViewById(R.id.mTvResume);
 
-		Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo);
+
+        Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo);
 		launchActivityTwoButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -90,6 +103,8 @@ public class ActivityOne extends Activity {
 		Log.i(TAG, "Entered the onStart() method");
 
 		// TODO:
+        mStart++;
+        mTvStart.setText(mStart);
 		// Update the appropriate count variable
 		// Update the user interface
 
@@ -103,6 +118,8 @@ public class ActivityOne extends Activity {
 		Log.i(TAG, "Entered the onResume() method");
 
 		// TODO:
+        mResume++;
+        mTvResume.setText(mResume);
 		// Update the appropriate count variable
 		// Update the user interface
 
@@ -132,6 +149,8 @@ public class ActivityOne extends Activity {
 		Log.i(TAG, "Entered the onRestart() method");
 
 		// TODO:
+        mRestart++;
+        mTVRestart.setText(mRestart);
 		// Update the appropriate count variable
 		// Update the user interface
 
