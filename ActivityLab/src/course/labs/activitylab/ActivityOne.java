@@ -70,6 +70,9 @@ public class ActivityOne extends Activity {
 				// start
 				Intent intent = null;
 
+                intent = new Intent(ActivityTwo.class);
+                startActivity(intent);
+
 				// Launch the Activity using the intent
 
 			}
@@ -90,6 +93,8 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
+        mCreate++;
+        mTvCreate.setText(mCreate);
 
 	}
 
@@ -150,8 +155,8 @@ public class ActivityOne extends Activity {
 
 		// TODO:
         mRestart++;
-        mTVRestart.setText(mRestart);
-		// Update the appropriate count variable
+        displayCounts();
+        // Update the appropriate count variable
 		// Update the user interface
 
 	}
